@@ -1,0 +1,21 @@
+{
+  "name": "SaaS Platform",
+  "image": "mcr.microsoft.com/devcontainers/universal:2",
+  "features": {
+    "ghcr.io/devcontainers/features/docker-in-docker:2": {},
+    "ghcr.io/devcontainers/features/node:1": {
+      "version": "lts"
+    }
+  },
+  "postCreateCommand": "curl -sSL https://raw.githubusercontent.com/donatfp-eng/saas-platform/main/setup.sh | bash",
+  "forwardPorts": [3000, 5432, 6379, 9000, 9001],
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "Prisma.prisma",
+        "bradlc.vscode-tailwindcss",
+        "ms-azuretools.vscode-docker"
+      ]
+    }
+  }
+}
